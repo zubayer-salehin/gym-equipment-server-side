@@ -16,7 +16,7 @@ module.exports.sendEmailWithGmail = (userEmail, id) => {
         to: userEmail,
         subject: "Website Password Reset",
         html: `<h3>Reset Password<h3/>
-        <p>You can change your password for security reasons or reset it if you forget it. Password Reset Link is Here: http://localhost:3000/reset_password/${id}<p/>`
+        <p>You can change your password for security reasons or reset it if you forget it. Password Reset Link is Here: ${process.env.CLIENT_SIDE_URL}/reset_password/${id}<p/>`
     }
 
     transporter.sendMail(mailOptions, function (err, data) {
