@@ -1,8 +1,6 @@
-const { verifyToken } = require("../Middleware/verifyToken");
 const { createUserServices, findUserByEmail, findUserById, updateUserById, getUserService } = require("../Services/Auth.Services");
 const { sendEmailWithGmail } = require("../Utils/email");
 const { generateToken } = require("../Utils/token");
-const bcrypt = require('bcryptjs');
 
 
 exports.createUser = async (req, res) => {

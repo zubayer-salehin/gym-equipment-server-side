@@ -4,7 +4,7 @@ const userControllers = require("../Controllers/Auth.Controllers");
 const { verifyToken } = require('../Middleware/verifyToken');
 
 
-router.get("/", userControllers.getUsers);
+router.get("/", verifyToken, userControllers.getUsers);
 
 router.post("/signup", userControllers.createUser);
 
